@@ -1,0 +1,25 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "C"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/binary0x01/area51/dbgspy_demo/dbgspy_demo.c" "/home/binary0x01/area51/dbgspy_demo/cmake-build-debug/CMakeFiles/dbgspy_demo.dir/dbgspy_demo.c.o"
+  "/home/binary0x01/area51/y3libgen/dbgspy.c" "/home/binary0x01/area51/dbgspy_demo/cmake-build-debug/CMakeFiles/dbgspy_demo.dir/home/binary0x01/area51/y3libgen/dbgspy.c.o"
+  "/home/binary0x01/area51/y3libgen/hash.c" "/home/binary0x01/area51/dbgspy_demo/cmake-build-debug/CMakeFiles/dbgspy_demo.dir/home/binary0x01/area51/y3libgen/hash.c.o"
+  "/home/binary0x01/area51/y3libgen/list.c" "/home/binary0x01/area51/dbgspy_demo/cmake-build-debug/CMakeFiles/dbgspy_demo.dir/home/binary0x01/area51/y3libgen/list.c.o"
+  "/home/binary0x01/area51/y3libgen/primes.c" "/home/binary0x01/area51/dbgspy_demo/cmake-build-debug/CMakeFiles/dbgspy_demo.dir/home/binary0x01/area51/y3libgen/primes.c.o"
+  "/home/binary0x01/area51/y3libgen/str.c" "/home/binary0x01/area51/dbgspy_demo/cmake-build-debug/CMakeFiles/dbgspy_demo.dir/home/binary0x01/area51/y3libgen/str.c.o"
+  )
+set(CMAKE_C_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
