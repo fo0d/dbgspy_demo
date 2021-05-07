@@ -70,7 +70,7 @@ void func_to_spy_on2(int x);
 int
 func_to_spy_on(struct my_data_type *data, char op) {
     int error, result = 0;
-
+		struct y3_dbg_target *t;
     /*
         Add targets to be known to dbgspy.
 
@@ -88,19 +88,26 @@ func_to_spy_on(struct my_data_type *data, char op) {
     else if (op == '%')
         result = data->n1 % data->n2;
 
-    y3_dbgspy_target(
+    t = y3_dbgspy_target(
             dbgspy,
             "func_to_spy_on",
             &error,
-            7,
+            6,
             "my_data_type:data->n1", &(data->n1), "int", Y3_DBGSPY_PTR, sizeof(int),
             "my_data_type:data->n2", data->n2, "int", Y3_DBGSPY_VAL,
             "op", op, "char", Y3_DBGSPY_VAL,
             "m", &data->m, "char", Y3_DBGSPY_PTR, sizeof(char),
             "my_data_type:data->some_string", data->some_string, "string", Y3_DBGSPY_PTR, strlen(data->some_string),
-            "global s", s, "string", Y3_DBGSPY_PTR, strlen(s),
-            "my_data_type:data", data, "my_data_type", Y3_DBGSPY_PTR, sizeof(struct my_data_type)
+            "global s", s, "string", Y3_DBGSPY_PTR, strlen(s)
     );
+
+    y3_dbgspy_target_add_element(
+            t,
+            &error,
+						1,
+            "my_data_type:data", data, "my_data_type", Y3_DBGSPY_PTR, sizeof(struct my_data_type)
+		);
+
     return result;
 }
 
@@ -217,7 +224,8 @@ void run_dbgspy_default_test() {
     data->n2 = 100;
     y3_dbgspy_set_target_element_val(dbgspy, "func_to_spy_on", "my_data_type:data->n2", (int *) 100, Y3_DBGSPY_VAL,
                                      &error);
-    printf("my_data_type:data->n2 %d = %d\n", data->n2, (int)y3_dbgspy_get_target_element_val(dbgspy, "func_to_spy_on", "my_data_type:data->n2", &error));
+    printf("my_data_type:data->n2 %d = %d\n", data->n2, (int)y3_dbgspy_get_target_element_val(dbgspy, "func_to_spy_on", 
+																																														  "my_data_type:data->n2", &error));
 
     printf("setting (PTR value)my_data_type:data->n1 %d to %d\n", data->n1, 101);
     data->n1 = 101;

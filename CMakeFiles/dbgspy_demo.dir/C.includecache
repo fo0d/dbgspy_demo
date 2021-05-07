@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/binary0x01/area51/y3libgen/hash.c
+stdlib.h
+-
+string.h
+-
+stdint.h
+-
+assert.h
+-
+hash.h
+/home/binary0x01/area51/y3libgen/hash.h
+primes.h
+/home/binary0x01/area51/y3libgen/primes.h
+
+/home/binary0x01/area51/y3libgen/hash.h
+stddef.h
+-
+stdlib.h
+-
+
+/home/binary0x01/area51/y3libgen/primes.h
+
