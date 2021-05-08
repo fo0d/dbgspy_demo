@@ -316,11 +316,11 @@ run_dbgspy_default_test()
     dbgspy, "func_to_spy_on", "my_data_type:data", &error);
 
   if (dbgv == NULL)
-    printf(
-      "**error could not get var instance instance: var %s does not exist in "
-      "target %s\n",
-      "my_data_type:data",
-      "func_to_spy_on");
+    printf("**error could not get var instance instance: var %s does not "
+           "exist in "
+           "target %s\n",
+           "my_data_type:data",
+           "func_to_spy_on");
   else
     printf("var%s %s exists in %s\n",
            dbgv->is_ptr ? "(ptr)" : "",
@@ -343,11 +343,11 @@ run_dbgspy_default_test()
   dbgv = y3_dbgspy_get_context_element_inst(dbgspy, "19", "g3", &error);
 
   if (dbgv == NULL)
-    printf(
-      "**error could not get var instance instance: var %s does not exist in "
-      "context %s\n",
-      "g3",
-      c->name);
+    printf("**error could not get var instance instance: var %s does not "
+           "exist in "
+           "context %s\n",
+           "g3",
+           c->name);
   else
     printf("var%s %s exists in %s\n",
            dbgv->is_ptr ? "(ptr)" : "",
@@ -562,7 +562,8 @@ y3_dbgspy(struct y3_dbg* T)
               printf(
                 "%s %s %d\n", var->name, var->type.name, *(char*)var->val);
             else
-              printf("%s %s %d\n", var->name, var->type.name, (char)var->val);
+              printf(
+                "%s %s %d\n", var->name, var->type.name, (char)var->val);
           } else if (strncmp(var->type.name, "string", 6) == 0) {
             printf("%s %s %s\n", var->name, var->type.name, (char*)var->val);
           } else {
